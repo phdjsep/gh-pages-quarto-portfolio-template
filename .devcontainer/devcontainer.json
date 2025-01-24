@@ -24,10 +24,11 @@
 			"installREnv": true,
 			"useTesting": true,
 			"vscodeRSupport": "minimal"
-		},
-		"ghcr.io/rocker-org/devcontainer-features/rstudio-server:0": {
-			"singleUser": true,
-			"version": "stable"
 		}
+		// ,
+		// "ghcr.io/rocker-org/devcontainer-features/rstudio-server:0": {
+		// 	"singleUser": true,
+		// 	"version": "stable"
+		// }
 	}
 }
