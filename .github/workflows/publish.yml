@@ -1,0 +1,20 @@
+name: Deploy Quarto Site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Render
+        uses: quarto-dev/quarto-actions/render@v2
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
