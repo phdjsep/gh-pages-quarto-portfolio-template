@@ -1,36 +1,22 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"quarto.quarto",
-				"ms-toolsai.jupyter",
-				"REditorSupport.r",
-				"ms-toolsai.vscode-jupyter-cell-tags",
-				"ms-toolsai.jupyter-keymap",
-				"ms-toolsai.jupyter-renderers",
-				"ms-toolsai.vscode-jupyter-slideshow",
-				"ms-python.python",
-				"ms-vsliveshare.vsliveshare"
-			]
-		}
-	},
-	"features": {
-		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
-            "version": "1.6.40"
-        },
-		"ghcr.io/rocker-org/devcontainer-features/r-apt:0": {
-			"installDevTools": true,
-			"installREnv": true,
-			"useTesting": true,
-			"vscodeRSupport": "minimal"
-		}
-		// ,
-		// "ghcr.io/rocker-org/devcontainer-features/rstudio-server:0": {
-		// 	"singleUser": true,
-		// 	"version": "stable"
-		// }
-	},
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt"
+  "name": "Quarto Portfolio",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
+      "version": "release"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "quarto.quarto",
+        "github.copilot",
+        "github.copilot-chat"
+      ],
+      "settings": {
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt"
 }
